@@ -1,0 +1,10 @@
+pipeline {
+    agent any
+    stages {
+        stage('Create Index') {
+            steps {
+                sh 'curl -X PUT http://opensearch:9200/books'
+            }
+        }
+    }
+}

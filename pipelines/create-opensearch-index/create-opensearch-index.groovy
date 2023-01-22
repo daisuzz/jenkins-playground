@@ -12,6 +12,6 @@ node {
         ])
     ])
     stage("Create Index"){
-        sh "curl -X PUT http://opensearch:9200/books-${VERSION}"
+        sh "curl -X PUT -d @./books.json http://opensearch:9200/books-${VERSION}"
     }
 }

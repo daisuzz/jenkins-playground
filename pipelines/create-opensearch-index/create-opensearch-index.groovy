@@ -12,6 +12,7 @@ node {
         ])
     ])
     stage("Create Index"){
-        sh "curl -X PUT -d @./books.json http://opensearch:9200/books-${VERSION}"
+        git branch: 'opensearch-playground', url: 'https://github.com/daisuzz/jenkins-playground.git'
+        sh "curl -X PUT -d @./pipelines/create-opensearch-index/books.json http://opensearch:9200/books-${VERSION}"
     }
 }

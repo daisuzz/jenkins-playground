@@ -20,7 +20,7 @@ node {
     ])
     stage("Switch alias") {
         git branch: 'opensearch-playground', url: 'https://github.com/daisuzz/jenkins-playground.git'
-        sh "curl -XPOST -H 'Content-Type:application/json' http://opensearch:9200/_aliases -d {\"actions\": [{\"remove\": {\"index\": \"books-${OLD_VERSION}\",\"alias\": \"books\"}},{\"add\": {\"index\": \"books-${NEW_VERSION}\",\"alias\":\"books\"}}]}"
+        sh "curl -XPOST -H 'Content-Type:application/json' http://opensearch:9200/_aliases -d '{\"actions\": [{\"remove\": {\"index\": \"books-${OLD_VERSION}\",\"alias\": \"books\"}},{\"add\": {\"index\": \"books-${NEW_VERSION}\",\"alias\":\"books\"}}]}'"
     }
     stage("Delete old index") {
         sh "curl -XDELETE http://opensearch:9200/books-${OLD_VERSION}"

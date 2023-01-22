@@ -3,9 +3,16 @@ node {
     properties([
             parameters([
                     string(
-                            name: 'VERSION',
+                            name: 'OLD_VERSION',
                             description: '''\
-                        作成したいインデックスのバージョンを指定(例. v1)
+                        切り替え元のインデックスのバージョンを指定(例. v1)
+                        ここで指定したバージョンが「インデックス名-バージョン名」として付与される
+                    '''.stripIndent()
+                    ),
+                    string(
+                            name: 'NEW_VERSION',
+                            description: '''\
+                        切り替え先のインデックスのバージョンを指定(例. v1)
                         ここで指定したバージョンが「インデックス名-バージョン名」として付与される
                     '''.stripIndent()
                     )

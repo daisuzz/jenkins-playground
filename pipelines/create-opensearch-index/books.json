@@ -17,8 +17,5 @@
         "type": "integer"
       }
     }
-  },
-  "aliases": {
-    "books": {}
   }
 }

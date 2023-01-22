@@ -1,4 +1,4 @@
-node("master"){
+node {
     checkout scm
     properties([
         parameters([
